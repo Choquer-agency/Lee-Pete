@@ -11,9 +11,9 @@ module.exports = {
   // The various configurable Tailwind configuration files.
   presets: [
     require('tailwindcss/defaultConfig'),
-    require('./tailwind.config.typography.js'),
-    require('./tailwind.config.peak.js'),
-    require('./tailwind.config.site.js'),
+    require('./tailwind.config.typography.cjs'),
+    require('./tailwind.config.peak.cjs'),
+    require('./tailwind.config.site.cjs'),
   ],
   // Uncomment the next line to enable class based dark mode: https://peak.studio1902.nl/features/dark-mode.html.
   // darkMode: 'class',
