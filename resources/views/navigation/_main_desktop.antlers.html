@@ -1,0 +1,69 @@
+{{#
+	@name Main desktop navigation
+	@desc The sites main desktop navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
+#}}
+
+<!-- /navigation/_main_desktop.antlers.html -->
+<nav class="hidden lg:block">
+    <ul class="flex items-center m-0 space-x-8">
+        {{ nav:main max_depth="2" include_home="false" }}
+			{{ if !left_nav_item }}
+				<li
+					{{ if children }}
+						x-data="{ subnavOpen: false }"
+						@keyup.escape.window="subnavOpen = false"
+						x-cloak
+					{{ /if }}
+					class="relative leading-none list-none mb-0 !ml-6"
+				>
+					<a
+						class="
+							flex items-center uppercase tracking-wide hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary no-underline {{ is_current ? 'font-bold' : 'font-semibold' }}"
+						{{ if children }}
+							href="#"
+							@click.prevent="subnavOpen = !subnavOpen"
+							:aria-label="subnavOpen
+								? '{{ trans:strings.subnav_close }}'
+								: '{{ trans:strings.subnav_open }}'"
+							:aria-expanded="subnavOpen"
+						{{ else }}
+							href="{{ url }}"
+						{{ /if }}
+					>
+						{{ title }}
+						{{ if children }}
+							<svg width="13px" height="12px" viewBox="0 0 13 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ml-1.5 transition-all duration-75" :class="{ 'rotate-180': subnavOpen }"
+							aria-hidden="true">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g transform="translate(-1162.000000, -26.000000)" stroke="#004D71" stroke-width="1.5">
+										<g transform="translate(1161.000000, 26.000000)">
+											<polygon points="7.5 1.3 12.5 1.3 10.0000577 5.85 7.5 10.4 4.99994226 5.85 2.5 1.3"></polygon>
+										</g>
+									</g>
+								</g>
+							</svg>
+						{{ /if }}
+					</a>
+					{{ if children }}
+						<ul
+							x-show="subnavOpen"
+							x-trap="subnavOpen"
+							class="absolute mt-5 ml-0 py-3 px-6 bg-white/80 list-none text-center z-[99]"
+							@click.outside="subnavOpen = false"
+							x-transition
+						>
+							{{ children }}
+								<li class="">
+									<a class="whitespace-nowrap py-2 px-1 -mx-1 block hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary no-underline font-sm uppercase {{ is_current ? 'font-bold' : 'font-semibold' }}" href="{{ url }}">
+										{{ title }}
+									</a>
+								</li>
+							{{ /children }}
+						</ul>
+					{{ /if }}
+				</li>
+			{{ /if }}
+        {{ /nav:main }}
+    </ul>
+</nav>
+<!-- End: /navigation/_main_desktop.antlers.html -->

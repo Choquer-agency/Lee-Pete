@@ -1,0 +1,83 @@
+title: Milestones
+fields:
+  -
+    handle: milestone_note
+    field:
+      always_show_set_button: false
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      display: Note
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      buttons:
+        - bold
+        - italic
+  -
+    handle: milestones_grid
+    field:
+      fields:
+        -
+          handle: milestone_icon
+          field:
+            mode: list
+            container: assets
+            restrict: false
+            allow_uploads: true
+            show_filename: true
+            display: Icon
+            type: assets
+            icon: assets
+            listable: hidden
+            instructions_position: above
+            max_files: 1
+        -
+          handle: milestone_number
+          field:
+            input_type: number
+            antlers: false
+            display: Number
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            width: 66
+        -
+          handle: milestones_small_text
+          field:
+            input_type: text
+            antlers: false
+            display: 'Small Text'
+            type: text
+            icon: text
+            width: 33
+            listable: hidden
+            instructions_position: above
+        -
+          handle: milestone_text
+          field:
+            input_type: text
+            antlers: false
+            display: Text
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+      mode: stacked
+      max_rows: 4
+      reorderable: true
+      display: Milestones
+      type: grid
+      icon: grid
+      listable: hidden
+      instructions_position: above

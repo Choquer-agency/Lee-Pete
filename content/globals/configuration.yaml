@@ -1,0 +1,25 @@
+title: Configuration
+data:
+  phone_number: '(604) 836-1054'
+  email: info@leeandpete.com
+  header_logo: logos/leeandpete.png
+  address_text:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Vancouver Real Estate Group '
+        -
+          type: hardBreak
+        -
+          type: text
+          text: '3195 Oak St, Vancouver, BC'
+  copyright_text: 'Lee + Pete Vancouver Real Estate'
+  footer_logo: logos/LEEPETEREG.png
+  right_footer_logo: logos/OAKWYN_logo-G.svg
+  bottom_footer_logo: logos/rhino-white.svg
+  404_title: '404 page not found'
+  cta_title: 'Get In Touch'
+  cta_button_text: Continue
+  cta_button_link: 'entry::6cf07da7-5e9d-4c7f-9113-72e49cb0100c'

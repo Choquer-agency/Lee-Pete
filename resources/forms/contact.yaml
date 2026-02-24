@@ -1,0 +1,10 @@
+title: Contact
+honeypot: fax
+email:
+  -
+    id: yO014Yrv
+    to: info@leeandpete.com
+    reply_to: '{{ email }}'
+    subject: 'New Inquiry'
+    html: email/form_owner
+    text: email/form_owner_text

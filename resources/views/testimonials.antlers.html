@@ -1,0 +1,25 @@
+{{#
+	@name Testimonials
+	@desc The testimonials template with an outer wrapper grid as defined in tailwind.config.js. It makes sure all blocks on a page get evenly spaced without having to worry about margins or paddings.
+#}}
+
+<!-- /testimonials.antlers.html -->
+<main class="outer-grid" id="content">
+    <div class="lg:h-10"></div>
+    {{ partial src="page_builder/one_column_content" }}
+	<div>
+		<div class="relative js-bg-scale-container js-fast overflow-hidden w-full h-full">
+			{{ partial src="testimonials/testimonials_buttons" }}
+			{{ partial src="testimonials/testimonial_loop" }}
+			<!-- parallax bg image -->
+			<div class="hidden md:block absolute h-full w-full js-bg-scale -z-10 left-0 top-0">
+				{{ testimonials_background_image }}
+					<img src="{{ url }}" alt="{{ alt }}" class="w-full h-full object-left-top object-contain parallax-bg">
+				{{ /testimonials_background_image }}
+			</div>
+		</div>
+	</div>
+    {{ partial src="testimonials/testimonials_cta_banner" }}
+	{{ partial src="page_builder/call_to_action" }}
+</main>
+<!-- End: /testimonials.antlers.html -->

@@ -1,0 +1,109 @@
+<!-- /page_builder/_team.antlers.html -->
+<div class="text-lg py-14 lg:py-20 js-team-section">
+	<div class="fluid-container">
+		<div class="team images js-team-images w-full">
+			<div class="max-w-6xl m-auto grid grid-cols-2 gap-y-4 gap-x-6 lg:flex lg:justify-center lg:items-end">
+				{{ team_members }}
+					{{ team_image }}
+						<div class="js-team-member-container relative {{ if !first }} lg:-ml-24 {{ /if }} hidden lg:block" data-team-member="{{ slug }}">
+							<img src="{{ url }}"
+							alt="{{ alt }}"
+							data-image="{{ url }}"
+							data-hover="{{ team_image_hover }}"
+							class="js-team-member">
+						</div>
+
+						{{ if count == team_members | count | divide:2 }}
+							<div class="hidden lg:block"></div>
+						{{ /if }}
+					{{ /team_image }}
+					{{ team_mobile_image }}
+						<div class="lg:hidden js-mobile-image order-{{ mobile_order }}" data-team-mobile="{{ slug }}">
+							<img src="{{ url }}" alt="{{ alt }}">
+						</div>
+					{{ /team_mobile_image }}
+				{{ /team_members }}
+			</div>
+		</div>
+		<div class="content max-w-3xl m-auto">
+			<div class="pt-24 md:pt-32 pb-14 lg:pt-12 hidden fixed left-0 top-0 w-full h-full lg:h-full z-50 px-8 bg-white/75 lg:bg-transparent backdrop-blur lg:backdrop-blur-none lg:static overflow-auto js-content" id="hidden-content-{{ count }}" aria-hidden="false">
+				<div class="lg:hidden fixed top-16 md:top-20 right-0 p-5 js-close" id="js-close-{{ count }}">
+					<span class="text-4xl leading-3">&times;</span>
+				</div>
+				<h2 class="a-h1 font-semibold uppercase mb-0" id="team-member-title-{{ count }}"></h2>
+				<h3 class="font-semibold text-orange" id="team-member-position-{{ count }}"></h3>
+				<div id="team-member-content-{{ count }}"></div>
+			</div>
+			<div class="h-1.5 w-24 m-auto bg-primary mt-16"></div>
+		</div>
+	</div>
+</div>
+<script>
+document.querySelectorAll('.js-team-images').forEach(element => {
+	var teamImage = document.querySelectorAll('.js-team-member-container'),
+		teamMobile = document.querySelectorAll('.js-mobile-image')
+		closeButton = document.getElementById('js-close-{{ count }}')
+		currentSection = this;
+
+	element.style.opacity = 0;
+
+	Promise.all(Array.from(document.querySelectorAll('.js-team-member')).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+		element.style.opacity = 1;
+	});
+
+	// Places all page builder->team content into json data
+	JSON_DATA = [
+		{{page_builder}}
+			{{ team_members }}
+				{
+					"slug" : "{{ slug }}",
+					"name" : "{{ title }}",
+					"position" : "{{ team_position }}",
+					"content" : "{{ team_content }}",
+				},
+			{{ /team_members }}
+		{{/page_builder}}
+	];
+
+	// Changes text in content section to team member being hovered over based off json content
+	function contentChange(teamMember) {
+		var filterJSON = JSON_DATA.filter((teamArray) => {return teamArray.slug === teamMember}),
+			currentMember = filterJSON[0],
+			name = currentMember.name,
+			nameEl = document.getElementById('team-member-title-{{ count }}'),
+			position = currentMember.position,
+			positionEl = document.getElementById('team-member-position-{{ count }}'),
+			content = currentMember.content,
+			contentEl = document.getElementById('team-member-content-{{ count }}');
+
+		contentEl.innerHTML = content;
+		positionEl.textContent = position;
+		nameEl.textContent = name;
+	}
+
+	// Displays desktop content for each team member
+	teamImage.forEach(function (teamImage) {
+		teamImage.addEventListener('mouseover', function () {
+			var teamMember = this.getAttribute('data-team-member'),
+				hiddenContent = this.closest('.js-team-section').querySelector('#hidden-content-{{ count }}');
+			contentChange(teamMember);
+			if(hiddenContent !== null) { hiddenContent.classList.remove('hidden'); }
+		});
+	});
+
+	// Opens mobile modal for each team member
+	teamMobile.forEach(function (teamImage) {
+		teamImage.addEventListener('click', function () {
+			var teamMobile 		= this.getAttribute('data-team-mobile'),
+				hiddenContent 	= this.closest('.js-team-section').querySelector('#hidden-content-{{ count }}');
+			contentChange(teamMobile);
+			if(hiddenContent !== null) { hiddenContent.classList.remove('hidden'); }
+		});
+	});
+
+	closeButton.addEventListener('click', function () {
+		document.getElementById('hidden-content-{{ count }}').classList.add('hidden');
+	});
+});
+</script>
+<!-- /page_builder/_team.antlers.html -->

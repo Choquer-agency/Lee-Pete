@@ -1,0 +1,168 @@
+title: Article
+fields:
+  -
+    handle: article
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+        - alignleft
+        - aligncenter
+        - alignright
+        - alignjustify
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: true
+      listable: hidden
+      display: Article
+      replicator_preview: false
+      always_show_set_button: true
+      validate:
+        - required
+      sets:
+        main:
+          display: Main
+          instructions: null
+          icon: null
+          sets:
+            figure:
+              display: Figure
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: figure
+            buttons:
+              display: Buttons
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: buttons
+            pull_quote:
+              display: 'Pull quote'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: pull_quote
+            table:
+              display: Table
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: table
+            video:
+              display: Video
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: video
+            heading:
+              display: Heading
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: article_heading_text_alignment
+                  field:
+                    options:
+                      left: Left
+                      center: Center
+                      right: Right
+                    display: 'Text alignment'
+                    type: button_group
+                    icon: button_group
+                    listable: hidden
+                    instructions_position: above
+                    default: left
+                -
+                  handle: article_heading
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Heading
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+            image_grid:
+              display: 'Image Grid'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: article_image_grid
+                  field:
+                    mode: list
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    display: 'Image Grid'
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    container: assets
+            small_text:
+              display: 'Small Text'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: small_text_alignment
+                  field:
+                    options:
+                      left: Left
+                      center: Center
+                      right: Right
+                    default: left
+                    display: 'Small Text Alignment'
+                    type: button_group
+                    icon: button_group
+                    listable: hidden
+                    instructions_position: above
+                -
+                  handle: small_text
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Small Text'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    validate:
+                      - required
+      container: assets
+      enable_input_rules: true
+      enable_paste_rules: true
+      instructions_position: above
+      antlers: false
+      visibility: visible
+      smart_typography: false
+      inline: false
+      word_count: false
+      remove_empty_nodes: false
+      collapse: false
+      previews: true
+      hide_display: false

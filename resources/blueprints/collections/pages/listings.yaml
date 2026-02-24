@@ -1,0 +1,64 @@
+title: Listings
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: listing_embed_code
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: 'Embed Code'
+          type: markdown
+          icon: markdown
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+  call_to_action:
+    display: 'Call to Action'
+    fields:
+      -
+        import: call_to_action
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+      -
+        handle: template
+        field:
+          default: listings
+          display: Template
+          type: hidden
+          icon: hidden
+          listable: hidden
+          instructions_position: above

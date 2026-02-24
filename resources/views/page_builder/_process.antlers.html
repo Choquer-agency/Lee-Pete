@@ -1,0 +1,93 @@
+<article>
+    {{ process_item }}
+        <div class="relative" style="background-color: #{{ progress_background_color }}; color: {{ progress_background_color == '004d71' ? '#fff' : '#000' }};">
+            <div class="fluid-container relative py-28">
+                <div class="z-0 absolute left-0 top-0 w-full h-full flex lg:items-center lg:justify-center">
+                    <div class="z-0 absolute left-0 top-0 lg:w-full h-full ml-7 lg:ml-auto">
+                        <div class="h-full w-[2px] m-auto bg-white"></div>
+                    </div>
+                    <div class="text-center relative z-10 text-white pt-7 pl-3 lg:p-0">
+                        <h2 class="text-xl lg:text-3xl mb-0 inline-block rounded-full border-2 border-white px-2 lg:py-5 lg:px-6" style="background-color: #{{ progress_background_color }};">{{ count }}</h2>
+                    </div>
+                </div>
+                <div class="lg:grid lg:grid-cols-2 {{ process_image_alignment === 'double_height' || !process_image ?= ' z-20 relative ' }}">
+                    <div class="ml-auto pr-20 md:pr-28 lg:max-w-xl leading-9 font-semibold pl-5 flex items-center">
+                        <div class="w-full overflow-hidden">
+                            {{ if process_alignment == 'left' }}
+								<div class="js-process-item left">
+									<h2 class="font-bold">{{ process_title }}</h2>
+									{{ process_content }}
+								</div>
+                            {{ else }}
+								{{ if process_image_alignment !== 'double_height' }}
+									{{ process_image }}
+
+										{{ if process_image_alignment == 'bottom' }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain lg:max-w-sm xl:max-w-lg absolute bottom-0 object-bottom" }}
+										{{ elseif process_image_alignment == 'top' }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain lg:max-w-sm xl:max-w-lg absolute top-0 object-top" }}
+										{{ else }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain" }}
+										{{ /if }}
+
+										{{ partial:components/picture
+											:image="url"
+											:class="image_class"
+											cover="false"
+											lazy="true"
+											:sizes="view:sizes['{size}']"
+										}}
+									{{ /process_image }}
+								{{ /if }}
+                            {{ /if }}
+                        </div>
+                    </div>
+                    <div class="pl-20 md:pl-28 lg:max-w-xl leading-9 font-semibold pr-5 flex items-center">
+                        <div class="w-full overflow-hidden">
+                            {{ if process_alignment == 'right' }}
+								<div class="js-process-item right">
+									<h2 class="font-bold">{{ process_title }}</h2>
+									{{ process_content }}
+								</div>
+                            {{ else }}
+								{{ if process_image_alignment !== 'double_height' }}
+									{{ process_image }}
+										{{ if process_image_alignment == 'bottom' }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain lg:max-w-sm xl:max-w-lg absolute bottom-0 object-bottom" }}
+										{{ elseif process_image_alignment == 'top' }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain lg:max-w-sm xl:max-w-lg absolute top-0 object-top" }}
+										{{ else }}
+											{{ image_class = "w-full hidden lg:block w-full h-full object-contain" }}
+										{{ /if }}
+										{{
+											partial:components/picture
+											:image="url"
+											:class="image_class"
+											cover="false"
+											lazy="true"
+											:sizes="view:sizes['{size}']"
+										}}
+									{{ /process_image }}
+								{{ /if }}
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{{ if process_image_alignment === 'double_height' }}
+				<div class="absolute top-0 left-0 h-[200%] w-full z-10 opacity-75">
+					{{ process_image }}
+						{{
+							partial:components/picture
+							:image="url"
+							class="w-full lg:block h-full object-contain"
+							cover="false"
+							lazy="true"
+							:sizes="view:sizes['{size}']"
+						}}
+					{{ /process_image }}
+				</div>
+			{{ /if }}
+        </div>
+    {{ /process_item }}
+</article>

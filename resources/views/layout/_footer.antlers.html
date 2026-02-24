@@ -1,0 +1,66 @@
+{{#
+	@name Footer
+	@desc The sites footer rendered on each page.
+#}}
+
+<!-- /layout/_footer.antlers.html -->
+<footer class="w-full mt-auto">
+    <div class="bg-primary-dark py-10 md:py-28 relative">
+        <div class="md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-16 lg:gap-24 fluid-container text-neutral font-semibold">
+            <div class="text-center md:text-left">
+                {{ configuration:footer_logo }}
+                    <img src="{{ url }}" alt="{{ alt }}" class="w-64 max-w-full m-auto md:m-0">
+                {{ /configuration:footer_logo }}
+                <div class="mt-12 text-lg space-y-5 md:space-y-0">
+                    {{ configuration:address_text }}
+                    <p class="mb-0 text-lg">
+                        Email: <a href="mailto:{{ configuration:email }}" class="no-underline hover:text-neutral hover:underline">
+                            {{ configuration:email }}
+                        </a><br>
+                        Call: <a href="tel:{{ configuration:phone_number | slugify }}" class="no-underline hover:text-neutral hover:underline">
+                            {{ configuration:phone_number }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+            {{ partial:navigation/footer }}
+            <div class="lg:col-span-2">
+                {{ configuration:right_footer_logo }}
+                    {{
+						partial:components/picture
+						:image="url"
+						class="m-auto md:ml-auto md:mr-0"
+						cover="false"
+						lazy="true"
+						:sizes="view:sizes['{size}']"
+					 }}
+                {{ /configuration:right_footer_logo }}
+            </div>
+            {{# Let's users reset their cookie consent when you use the cookie banner. #}}
+            {{ yield:reset_cookie_consent }}
+        </div>
+        <div class="absolute bottom-0 right-9 md:right-14">
+            {{ configuration:bottom_footer_logo }}
+                {{
+					partial:components/picture
+					:image="url"
+					class="w-24 md:w-48"
+					cover="false"
+					lazy="true"
+					:sizes="view:sizes['{size}']"
+				 }}
+            {{ /configuration:bottom_footer_logo }}
+        </div>
+    </div>
+    <div class="bg-beige py-3.5">
+        <div class="fluid-container text-xs md:text-sm lg:flex lg:justify-between">
+            <div class="text-center lg:text-left">
+                {{ configuration:copyright_text }} {{ trans:strings.copyright_date }}. All rights reserved.
+			</div>
+			<div class="text-center lg:text-right">
+				Designed By <a href="https://h18.com/" target="_blank" rel="noopener noreferrer"><strong>Hangar 18</strong></a>. Website developed by <a href="https://www.splitmango.com/" target="_blank" rel="noopener noreferrer"><strong>SplitMango</strong></a>
+			</div>
+        </div>
+    </div>
+</footer>
+<!-- End: /layout/_footer.antlers.html -->

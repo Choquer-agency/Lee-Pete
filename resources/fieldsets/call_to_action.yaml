@@ -1,0 +1,32 @@
+title: 'Call to action'
+fields:
+  -
+    handle: cta_title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions_position: above
+      antlers: false
+  -
+    handle: cta_button_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Button Text'
+      type: text
+      icon: text
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: cta_button_link
+    field:
+      display: 'Button Link'
+      type: link
+      icon: link
+      width: 50
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,15 @@
+title: 'Social media'
+data:
+  social_media:
+    -
+      handle: info@leeandpete.com
+      prefix: 'mailto:'
+      type: email
+      enabled: true
+      social_media_icon: icons/share-email.svg
+    -
+      handle: LeeandPeteVancouverRealEstateGroup
+      prefix: 'https://www.facebook.com/'
+      type: facebook
+      enabled: true
+      social_media_icon: icons/share-facebook.svg

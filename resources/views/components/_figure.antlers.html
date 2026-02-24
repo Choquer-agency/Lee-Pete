@@ -1,0 +1,29 @@
+---
+sizes: {
+    'xs': '(min-width: 0) 55vw, 90vw',
+    'sm': '(min-width: 0) 55vw, 90vw',
+    'md': '(min-width: 768px) 55vw, 90vw',
+    'lg': '(min-width: 768px) 75vw, 90vw',
+    'xl': '90vw'
+}
+---
+{{#
+	@name Figure
+	@desc The figure component. A sizeable image rendered in a figure tag with optional caption.
+    @set page.article.figure
+#}}
+
+<!-- /components/_figure.antlers.html -->
+<figure class="size-{{ size }} {{ image_alignment }} my-4">
+    {{
+        partial:components/picture
+        :image="image"
+        class="w-full"
+        cover="false"
+        lazy="true"
+        :sizes="view:sizes['{size}']"
+    }}
+
+    {{ partial:typography/caption as="figcaption" }}
+</figure>
+<!-- End: /components/_figure.antlers.html -->

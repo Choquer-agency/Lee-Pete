@@ -1,0 +1,171 @@
+title: 'Testimonial Archive'
+sections:
+  main:
+    display: Intro
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        import: one_column_content
+      -
+        handle: testimonials_buttons
+        field:
+          display: Buttons
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: testimonials_archive_buttons
+        field:
+          fields:
+            -
+              handle: testimonials_button_link
+              field:
+                display: 'Button Link'
+                type: link
+                icon: link
+                listable: hidden
+                instructions_position: above
+            -
+              handle: testimonials_button_icon
+              field:
+                mode: list
+                container: assets
+                restrict: false
+                allow_uploads: true
+                show_filename: true
+                display: 'Button Icon'
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions_position: above
+          mode: stacked
+          max_rows: 2
+          reorderable: true
+          display: Buttons
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+  testimonials:
+    display: Testimonials
+    fields:
+      -
+        handle: testimonials_background_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Background Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+      -
+        handle: testimonial_loop
+        field:
+          display: 'Testimonial Loop'
+          type: section
+          icon: section
+          instructions: 'Testimonials will be added automatically from the Testimonials Collection'
+          listable: hidden
+          instructions_position: below
+  cta_banner:
+    display: 'CTA Content'
+    fields:
+      -
+        handle: cta_banner
+        field:
+          display: 'CTA Banner'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: testimonial_banner_bg_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Banner Background Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+      -
+        handle: testimonials_banner_button_text
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Text'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: testimonial_banner_button_link
+        field:
+          collections:
+            - pages
+          display: 'Button Link'
+          type: link
+          icon: link
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: cta_block
+        field:
+          display: 'CTA Block'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        import: call_to_action
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: template
+        field:
+          default: testimonials
+          display: Template
+          type: hidden
+          icon: hidden
+          listable: hidden
+          instructions_position: above
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

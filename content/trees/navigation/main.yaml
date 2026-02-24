@@ -1,0 +1,51 @@
+tree:
+  -
+    id: c8cb4efe-6647-4b12-8a8c-7b020cd75618
+    entry: 82861e98-9de7-4e66-bd38-855e4b4d6f6b
+  -
+    id: a2e4c217-6b62-406c-b6e8-aa3189c3c37e
+    entry: 5546d2bc-4f52-4289-acbc-dfe644f5b756
+    title: Listings
+    children:
+      -
+        id: ed369100-6cc6-4d95-8710-e0cf957b2cd0
+        entry: eb535e7f-99a3-4fa1-b112-82a3940e8704
+      -
+        id: b7d9e58e-e59b-41bc-ab8e-23132183304e
+        entry: 5546d2bc-4f52-4289-acbc-dfe644f5b756
+        title: 'MLS® Listings'
+      -
+        id: 0ac3736f-c4d2-4b50-be10-b77d1e13481f
+        entry: 73141159-f928-4936-b6cd-b0c8c449234d
+        title: 'Sold Listings'
+  -
+    id: 2f111bd6-8493-458a-8c42-1d2d16023c7f
+    title: About
+    url: '#'
+    children:
+      -
+        id: 0bae9ffa-5801-4aa4-aa6e-86fc1361d76b
+        entry: 72f4d2b3-c90c-46cd-807d-fb3148c5cc5d
+      -
+        id: 77965e69-ca6f-4185-a5a0-a88fb60334c4
+        entry: de524ea9-00b8-4cea-ad0c-cba20b6b22d4
+  -
+    id: 50322b54-462c-474e-afeb-cb9042b5f2ee
+    entry: c26e1a41-47e3-4ae8-8b36-cec80937dff0
+  -
+    id: 48c09530-cc1b-4491-a880-1cd094730541
+    entry: 6cf07da7-5e9d-4c7f-9113-72e49cb0100c
+  -
+    id: 17573503-2e12-4283-8dac-5ca354763b43
+    title: 'Our Process'
+    url: '#'
+    data:
+      left_nav_item:
+        - left
+    children:
+      -
+        id: bb08de66-05b5-4cfc-b8ef-4254e4f2198c
+        entry: a12b9ca1-e93d-4d3d-9857-87cd0b9b679f
+      -
+        id: ee24ae3b-d0e1-46b7-b793-ec8301ab8faa
+        entry: 0dbfd2be-48fb-4d5c-88af-8b76be5d538a

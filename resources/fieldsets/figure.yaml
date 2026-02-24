@@ -1,0 +1,42 @@
+title: Figure
+fields:
+  -
+    handle: image
+    field: common.image
+    config:
+      width: 100
+  -
+    handle: size
+    field: common.size
+    config:
+      options:
+        xs: XS
+        sm: SM
+        md: Normal
+        lg: LG
+        xl: XL
+      width: 50
+  -
+    handle: image_alignment
+    field:
+      options:
+        left: Left
+        center: Center
+        right: Right
+      default: left
+      display: Alignment
+      type: button_group
+      icon: button_group
+      width: 50
+      listable: hidden
+      instructions_position: above
+      if:
+        size: 'not xl'
+  -
+    handle: caption
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Caption

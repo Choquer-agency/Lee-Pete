@@ -1,0 +1,38 @@
+{{#
+	@name Custom
+	@desc Custom partial for custom scripts
+#}}
+
+{{# Formilla Chat #}}
+{{ if (environment == 'production') }}
+
+    <script type="text/javascript">
+        (function() {
+            var head = document.getElementsByTagName("head").item(0);
+            var script = document.createElement("script");
+
+            var src = (document.location.protocol == 'https:' ?
+                'https://www.formilla.com/scripts/feedback.js' :
+                'http://www.formilla.com/scripts/feedback.js');
+
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", src);
+            script.setAttribute("async", true);
+
+            var complete = false;
+
+            script.onload = script.onreadystatechange = function() {
+                if (!complete && (!this.readyState ||
+                        this.readyState == 'loaded' ||
+                        this.readyState == 'complete')) {
+                    complete = true;
+                    Formilla.guid = 'cse09344-14fd-4546-af70-7be78bcbd85c';
+                    Formilla.loadWidgets();
+                }
+            };
+
+            head.appendChild(script);
+        })();
+    </script>
+
+{{ /if }}

@@ -1,0 +1,54 @@
+title: 'News Archive'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: news_loop
+        field:
+          display: News
+          type: section
+          icon: section
+          instructions: 'Posts will be added automatically from the News Collection'
+          listable: hidden
+          instructions_position: above
+      -
+        import: call_to_action
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+      -
+        handle: template
+        field:
+          default: news-archive
+          display: Template
+          type: hidden
+          icon: hidden
+          listable: hidden
+          instructions_position: above
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

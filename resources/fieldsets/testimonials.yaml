@@ -1,0 +1,38 @@
+title: Testimonials
+fields:
+  -
+    handle: testimonial_button_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Button Text'
+      type: text
+      icon: text
+      instructions: 'Text for read more button'
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: testimonial_button_link
+    field:
+      display: 'Button Link'
+      type: link
+      icon: link
+      instructions: 'Link for read more button'
+      width: 50
+      listable: hidden
+      instructions_position: above
+      collections:
+        - pages
+  -
+    handle: testimonials_entries
+    field:
+      mode: default
+      create: true
+      collections:
+        - testimonials
+      display: Testimonials
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above

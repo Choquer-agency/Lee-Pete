@@ -1,0 +1,22 @@
+<article>
+    {{ if full_width_image_link }}
+        <a href="{{ full_width_image_link }}" target="_blank">
+    {{ /if }}
+        {{ full_width_image }}
+            <!-- <img src="{{ url }}" alt="{{ alt }}" class="w-full h-full object-center object-cover hidden md:block"> -->
+			{{
+				partial:components/picture
+				:image="url"
+				class="w-full h-full object-center object-cover hidden md:block"
+				cover="true"
+				lazy="true"
+				:sizes="100vw"
+			}}
+        {{ /full_width_image }}
+        {{ full_width_image_mobile }}
+            <img src="{{ url }}" alt="{{ alt }}" class="w-full h-full object-center object-cover md:hidden">
+        {{ /full_width_image_mobile }}
+    {{ if full_width_image_link }}
+        </a>
+    {{ /if }}
+</article>

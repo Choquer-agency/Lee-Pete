@@ -1,0 +1,14 @@
+{{# Bind custom error classses when there is a validation error with the field. #}}
+<!-- /vendor/statamic/forms/fields/text.antlers.html -->
+<input
+    class="w-full rounded px-2 py-1 focus-visible:border-primary motion-safe:transition caret-primary"
+    :class="{ 'border-primary focus-visible:border-primary': errors.{{ handle }} }"
+    id="{{ handle }}"
+    name="{{ handle }}"
+    type="{{ input_type ?? 'text' }}"
+    placeholder="{{ placeholder }}"
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
+    {{# {{ validate | contains:required ?= "required" }} #}}
+    {{ old ?= value="{old}" }}
+/>
+<!-- End: /vendor/statamic/forms/fields/text.antlers.html -->

@@ -1,0 +1,22 @@
+{{ if social_media:social_media }}
+	<div class="mb-10">
+		<div class="flex justify-center">
+			{{ social_media:social_media }}
+				<div class="mx-2">
+					<a href="{{ prefix }}{{ handle }}" target="_blank">
+						{{ social_media_icon }}
+							{{
+								partial:components/picture
+								:image="url"
+								class=""
+								cover="false"
+								lazy="true"
+								:sizes="view:sizes['{size}']"
+							}}
+						{{ /social_media_icon }}
+					</a>
+				</div>
+			{{ /social_media:social_media }}
+		</div>
+	</div>
+{{ /if }}

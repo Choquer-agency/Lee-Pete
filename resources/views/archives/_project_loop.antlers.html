@@ -1,0 +1,41 @@
+<div class="fluid-container mt-11 !p-0">
+    {{ collection from="projects" sort="order" redirects="true" }}
+        <div class="grid grid-cols-12 mb-11 shadow-lg">
+            <div class="col-span-12 md:col-span-6 lg:col-span-7 relative lg:min-h-[40rem] h-80 md:h-auto">
+                {{ project_featured_image }}
+					{{
+						partial:components/picture
+						:image="url"
+						class="w-full h-full object-center object-cover absolute"
+						cover="false"
+						lazy="true"
+						:sizes="view:sizes['{size}']"
+					}}
+                {{ /project_featured_image }}
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-5 flex items-center justify-center md:justify-start">
+                <div class="p-6 pb-14 md:py-24 md:pl-14 md:pr-2 max-w-md text-center md:text-left">
+                    {{ project_logo }}
+						{{
+							partial:components/picture
+							:image="url"
+							class="mb-7 mx-auto md:mx-0"
+							cover="false"
+							lazy="true"
+							:sizes="view:sizes['{size}']"
+						}}
+                    {{ /project_logo }}
+                    <h3 class="font-bold leading-6 mb-6">
+                        {{ if single_project_title }}
+                            {{ single_project_title }}
+                        {{ else }}
+                            {{ title }}
+                        {{ /if }}
+                    </h3>
+                    <p class="font-semibold mb-7 leading-8">{{ project_summary }}</p>
+                    <p><a href="{{ url }}" class="button inline-block px-8 tracking[0.15px]" {{ if external_new_tab }} target="_blank" {{ /if }}>View Project</a></p>
+                </div>
+            </div>
+        </div>
+    {{ /collection }}
+</div>

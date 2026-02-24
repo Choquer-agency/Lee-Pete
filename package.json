@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "watch": "vite",
+    "build": "vite build",
+    "prod": "vite build",
+    "production": "vite build",
+    "format": "prettier --write \"resources/{js,css}/**\"",
+    "lint": "eslint \"resources/js/**\" --quiet"
+  },
+  "dependencies": {
+    "@alpinejs/collapse": "^3.8.0",
+    "@alpinejs/focus": "^3.8.0",
+    "@alpinejs/persist": "^3.8.0",
+    "@splidejs/splide": "^3.6.9",
+    "alpinejs": "^3.8.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "focus-visible": "^5.2.0",
+    "gsap": "3.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "laravel-vite-plugin": "^1.0.5",
+    "postcss": "^8.4.5",
+    "prettier": "^3.4.2",
+    "prettier-plugin-antlers": "^2.0.5",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.9"
+  },
+  "type": "module"
+}
+

@@ -1,0 +1,23 @@
+{{ if testimonials_archive_buttons }}
+	<div class="pb-9 md:pb-11 lg:pb-20">
+		<div class="fluid-container text-center">
+			<div class="flex justify-center">
+				{{ testimonials_archive_buttons }}
+					<a href="{{ testimonials_button_link }}" class="inline-block px-3">
+						{{ testimonials_button_icon }}
+							{{
+								partial:components/picture
+								:image="url"
+								class="max-h-56 hover:brightness-150"
+								cover="false"
+								lazy="true"
+								:sizes="view:sizes['{size}']"
+							}}
+
+						{{ /testimonials_button_icon }}
+					</a>
+				{{ /testimonials_archive_buttons }}
+			</div>
+		</div>
+	</div>
+{{ /if }}

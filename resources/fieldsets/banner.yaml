@@ -1,0 +1,93 @@
+title: Banner
+fields:
+  -
+    handle: banner_background_image_gallery
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      display: 'Background Image Gallery'
+      type: assets
+      icon: assets
+      listable: hidden
+      instructions_position: above
+  -
+    handle: banner_buttons
+    field:
+      fields:
+        -
+          handle: button_text
+          field:
+            input_type: text
+            antlers: false
+            display: 'Button Text'
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            validate:
+              - required
+        -
+          handle: button_link
+          field:
+            display: 'Button Link'
+            type: link
+            icon: link
+            listable: hidden
+            instructions_position: above
+            validate:
+              - required
+      mode: table
+      max_rows: 2
+      add_row: 'Add Button'
+      reorderable: true
+      display: 'Banner Buttons'
+      type: grid
+      icon: grid
+      listable: hidden
+      instructions_position: above
+  -
+    handle: banner_content_type
+    field:
+      options:
+        logo: Logo
+        text: Text
+      inline: false
+      cast_booleans: false
+      default: logo
+      display: 'Content Type'
+      type: radio
+      icon: radio
+      listable: hidden
+      instructions_position: above
+  -
+    handle: banner_logo
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      max_files: 1
+      display: 'Banner Logo'
+      type: assets
+      icon: assets
+      listable: hidden
+      instructions_position: above
+      folder: logos
+      unless:
+        banner_content_type: 'equals text'
+  -
+    handle: banner_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Banner Text'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      unless:
+        banner_content_type: 'equals logo'

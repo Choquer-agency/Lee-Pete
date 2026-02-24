@@ -1,0 +1,135 @@
+title: 'Team Member'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+              instructions_position: above
+              listable: true
+              input_type: text
+              antlers: false
+          -
+            handle: team_position
+            field:
+              input_type: text
+              antlers: false
+              display: Position
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+          -
+            handle: mobile_order
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Mobile Order'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: team_content
+            field:
+              always_show_set_button: false
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - anchor
+                - underline
+                - strikethrough
+              save_html: false
+              toolbar_mode: fixed
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              reading_time: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              antlers: false
+              display: Content
+              type: bard
+              icon: bard
+              listable: hidden
+              instructions_position: above
+              validate:
+                - required
+          -
+            handle: team_image
+            field:
+              mode: list
+              container: assets
+              folder: team
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              max_files: 1
+              display: 'Image One'
+              type: assets
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              validate:
+                - required
+          -
+            handle: team_image_hover
+            field:
+              mode: list
+              container: assets
+              folder: team
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              max_files: 1
+              display: 'Image Hover'
+              type: assets
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              validate:
+                - required
+          -
+            handle: team_mobile_image
+            field:
+              mode: list
+              container: assets
+              folder: team
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              max_files: 1
+              display: 'Mobile Image'
+              type: assets
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

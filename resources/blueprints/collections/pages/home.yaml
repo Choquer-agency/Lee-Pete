@@ -1,0 +1,320 @@
+title: Home
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        import: banner
+      -
+        handle: featured_listings_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Featured Title'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: featured_listings
+        field:
+          fields:
+            -
+              handle: featured_listing_image
+              field:
+                mode: list
+                container: assets
+                restrict: false
+                allow_uploads: true
+                show_filename: true
+                max_files: 1
+                display: 'Featured Image'
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions_position: above
+                validate:
+                  - required
+            -
+              handle: featured_listing
+              field:
+                max_items: 1
+                mode: default
+                create: true
+                collections:
+                  - pages
+                display: Listing
+                type: entries
+                icon: entries
+                listable: hidden
+                instructions_position: above
+                validate:
+                  - required
+          mode: stacked
+          reorderable: true
+          display: 'Featured Listings'
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+      -
+        handle: all_listings_link
+        field:
+          display: 'All Listings Link'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+  call_to_action_banner:
+    display: 'Call to Action Banner'
+    fields:
+      -
+        handle: contact_callout
+        field:
+          display: 'Contact Callout'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: contact_callout_logo
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Logo
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          folder: logos
+      -
+        handle: contact_callout_white
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: 'Content White'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          instructions: '** Email and Phone are pulled in automatically from the Global Configuration fields **'
+      -
+        handle: banner
+        field:
+          display: Banner
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_cta_bg_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Background Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_cta_text
+        field:
+          input_type: text
+          antlers: false
+          display: 'CTA Text'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_cta_link
+        field:
+          collections:
+            - pages
+          display: 'CTA Link'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+  testimonials:
+    display: Testimonials
+    fields:
+      -
+        import: testimonials
+  milestones:
+    display: Milestones
+    fields:
+      -
+        import: milestones
+  content:
+    display: Content
+    fields:
+      -
+        handle: one_column-content
+        field:
+          display: 'One Column Content'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        import: one_column_content
+      -
+        handle: process
+        field:
+          display: Process
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_bg_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Background Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_heading
+        field:
+          input_type: text
+          antlers: false
+          display: Heading
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_left_link
+        field:
+          display: 'Button Left Link'
+          type: link
+          icon: link
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_left_icon
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Button Left Icon'
+          type: assets
+          icon: assets
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_right_link
+        field:
+          display: 'Right Button Link'
+          type: link
+          icon: link
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: home_process_right_icon
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Button Right Icon'
+          type: assets
+          icon: assets
+          width: 50
+          listable: hidden
+          instructions_position: above
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: template
+        field:
+          default: home
+          display: Template
+          type: hidden
+          icon: hidden
+          listable: true
+          instructions_position: above
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  call_to_action:
+    display: 'CTA and Instagram'
+    fields:
+      -
+        handle: instagram_embed_code
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: 'Instagram Embed Code'
+          type: markdown
+          icon: markdown
+          listable: hidden
+          instructions_position: above
+      -
+        import: call_to_action
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

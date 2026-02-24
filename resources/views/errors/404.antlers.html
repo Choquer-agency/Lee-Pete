@@ -1,0 +1,27 @@
+{{#
+	@name Error: 404
+	@desc The 404 error template.
+#}}
+
+{{# Redirect if current_url is in the Redirects global. #}}
+{{ redirects:redirects where="url_old:{current_uri}"}}
+    {{ redirect to="{entry:url}" response="{response}" }}
+{{ /redirects:redirects }}
+
+{{# Yield a title to the SEO partial. #}}
+{{ section:seo_title }}
+	404 Page Not Found - Lee + Pete
+{{ /section:seo_title }}
+
+<!-- /errors/404.antlers.html -->
+<main class="outer-grid" id="content">
+	<div class="lg:h-10"></div>
+    <article class="fluid-container flex justify-center items-center min-h-[90vh]">
+        <div class="text-center">
+			<h1 class="font-bold text-4xl">{{ configuration:404_title }}</h1>
+            {{ partial:typography/paragraph :content="configuration:404_text" }}
+        </div>
+    </article>
+	{{ partial:errors/404_cta }}
+</main>
+<!-- End: /errors/404.antlers.html -->

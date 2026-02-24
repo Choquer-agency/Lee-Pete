@@ -1,0 +1,47 @@
+<div>
+	<div class="py-48 hidden md:block bg-neutral-light relative overflow-hidden z-0 h-full w-full">
+		<div class="js-bg-scale-container js-fast">
+			<div class="fluid-container text-center">
+				<h2 class="text-primary text-4xl font-bold uppercase mb-11">{{ home_process_heading }}</h2>
+				<div class="lg:w-1/2 m-auto flex justify-center">
+					{{ home_process_left_icon }}
+						<a href="{{ home_process_left_link }}" class="home-process-link">
+							{{
+								partial:components/picture
+								:image="url"
+								class="hover:brightness-150"
+								cover="false"
+								lazy="true"
+								:sizes="view:sizes['{size}']"
+							}}
+						</a>
+					{{ /home_process_left_icon }}
+					{{ home_process_right_icon }}
+						<a href="{{ home_process_right_link }}" class="home-process-link">
+							{{
+								partial:components/picture
+								:image="url"
+								class="hover:brightness-150"
+								cover="false"
+								lazy="true"
+								:sizes="view:sizes['{size}']"
+							}}
+						</a>
+					{{ /home_process_right_icon }}
+				</div>
+			</div>
+			<div class="absolute h-full w-full js-bg-scale -z-10 left-0 top-0">
+				{{ home_process_bg_image }}
+					{{
+						partial:components/picture
+						:image="url"
+						class="w-full h-full object-top object-cover parallax-bg"
+						cover="false"
+						lazy="true"
+						:sizes="view:sizes['{size}']"
+					}}
+				{{ /home_process_bg_image }}
+			</div>
+		</div>
+	</div>
+</div>

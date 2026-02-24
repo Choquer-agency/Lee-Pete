@@ -1,0 +1,25 @@
+<!-- contact_grid.antlers.html -->
+<article>
+	<div class="fluid-container py-10">
+		<div class="grid md:grid-cols-3 gap-y-7 gap-x-9 max-w-6xl m-auto">
+			{{ contact_grid }}
+				<div class="text-center flex flex-col justify-between">
+					<div class="mb-3.5">
+						<h3 class="uppercase font-bold mb-0 leading-5">{{ contact_grid_name }}</h3>
+						<h5 class="text-xs text-neutral mb-0">{{ contact_grid_position }}</h5>
+					</div>
+					<div>
+						{{ if contact_grid_phone }}
+							<p class="mb-2">Call: <a href="tel:{{ contact_grid_phone | slugify }}" class="no-underline">{{ contact_grid_phone }}</a></p>
+						{{ /if }}
+						{{ if contact_grid_email}}
+							<p class="mb-2">Email: <a href="mailto:{{ contact_grid_email }}" class="no-underline">{{ contact_grid_email }}</a></p>
+						{{ /if }}
+					</div>
+				</div>
+			{{ /contact_grid }}
+		</div>
+	</div>
+	<p class="text-xs md:text-sm text-neutral text-right pr-5 md:pr-10">{{ contact_section_note }}</p>
+</article>
+<!-- contact_grid.antlers.html -->

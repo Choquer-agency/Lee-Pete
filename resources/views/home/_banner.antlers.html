@@ -1,0 +1,48 @@
+<div class="overflow-hidden relative h-screen w-full">
+	<div class="js-bg-scale-container">
+		<div class="absolute flex justify-center items-center h-full w-full z-20">
+			<div class="{{ banner_content_type !== 'text' ?= ' fluid-container ' }} space-y-28 lg:pt-20">
+				{{ if banner_content_type !== 'text' }}
+					{{ if banner_logo }}
+						<div>
+							{{ banner_logo }}
+								{{ partial:components/picture :image="url" class="m-auto h-full" cover="false" lazy="true" :sizes="view:sizes['{size}']" }}
+							{{ /banner_logo }}
+						</div>
+					{{ /if }}
+				{{ else }}
+					{{ if banner_text }}
+						<div class="max-w-lg lg:max-w-4xl m-auto text-center px-14 py-11 bg-white/[.35]">
+							<h2 class="mb-0 font-bold leading-7">{{ banner_text }}</h2>
+						</div>
+					{{ /if }}
+				{{ /if }}
+				<div class="max-w-2xl m-auto space-y-6 {{ banner_content_type == 'text' ?= ' fluid-container ' }}">
+					{{ banner_buttons }}
+						<a href="{{ button_link }}" class="button button--white">
+							{{ button_text }}
+						</a>
+					{{ /banner_buttons }}
+				</div>
+			</div>
+		</div>
+		<div class="absolute h-full w-full js-bg-scale js-parallax -z-10" >
+			{{# Background image slider #}}
+			{{ if banner_background_image_gallery }}
+				<div class="js-slider splide" id="home_banner_slider"
+				aria-label="Image carousel">
+					<div class="splide__track">
+						<ul class="splide__list h-screen">
+							{{ banner_background_image_gallery }}
+								<li class="splide__slide h-screen">
+									{{ partial:components/picture :image="url" figure_class="" class="w-full" lazy="true" cover='true' :sizes="view:sizes['{size}']" }}
+
+								</li>
+							{{ /banner_background_image_gallery }}
+						</ul>
+					</div>
+				</div>
+			{{ /if }}
+		</div>
+	</div>
+</div>

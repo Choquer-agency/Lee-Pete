@@ -1,0 +1,21 @@
+{{#
+	@name Default
+#}}
+
+<!-- /default.antlers.html -->
+<main class="outer-grid" id="content">
+    {{ if page_has_banner }}
+        {{ page_banner }}
+            {{ partial src="home/banner" }}
+        {{ /page_banner }}
+    {{ /if }}
+    {{ page_builder scope="block" }}
+        {{ if count == 1 && type == 'one_column_content' && !page_has_banner }}
+            <div class="lg:h-10"></div>
+        {{ /if }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+	{{ partial src="navigation/news_pagination" }}
+	{{ partial src="components/fixed_button" }}
+</main>
+<!-- End: /default.antlers.html -->

@@ -1,0 +1,26 @@
+@import '@splidejs/splide/dist/css/splide-core.min.css';
+
+.splide__arrow svg {
+	@apply fill-white h-9 w-6;
+}
+
+.splide__arrow {
+	@apply align-middle block md:p-5 z-10;
+}
+
+.splide__arrows {
+	@apply absolute flex justify-between w-full h-full;
+}
+
+.splide__arrow--prev {
+	@apply rotate-180;
+}
+#home_banner_slider {
+	background-color: black;
+}
+
+#home_banner_splide
+	.splide__pagination, .splide__arrows {
+	display: none !important;
+	background-color: black;
+}

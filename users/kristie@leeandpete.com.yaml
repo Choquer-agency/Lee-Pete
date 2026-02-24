@@ -1,0 +1,12 @@
+name: Kristie
+roles:
+  - editor
+id: 3b6f2201-747b-4b2f-ae2b-3b3329814c8e
+password_hash: $2y$10$8zdGVjGrZaQjyVD2LnS1hOgLJ1h7hSCKPfofmfWASq.76va9XwwuS
+preferences:
+  theme: light
+  collections:
+    testimonials:
+      columns:
+        - title
+        - status

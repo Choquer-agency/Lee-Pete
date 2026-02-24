@@ -1,0 +1,15 @@
+{
+	"singleQuote": true,
+	"useTabs": true,
+	"plugins": ["prettier-plugin-antlers", "prettier-plugin-tailwindcss"],
+	"overrides": [
+		{
+			"files": ["*.antlers.html"],
+			"options": {
+				"parser": "antlers"
+			}
+		}
+	],
+	"tailwindStylesheet": "./resources/css/*",
+	"tailwindConfig": "tailwind.config.js"
+}

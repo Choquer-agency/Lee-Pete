@@ -1,0 +1,55 @@
+{{#
+	@name Pagination
+	@desc The pagination component. Include in a result set using `{{ partial:components/pagination }}`.
+    Auto adds pagination links to `resources/views/snippets/_seo.antlers.html`.
+#}}
+
+<!-- /components/_pagination.antlers.html -->
+{{ if paginate.total_pages > 1 }}
+    {{ paginate }}
+        <ul class="pagination list-none flex justify-center space-x-1.5 items-center m-0 pt-6 pb-14">
+            {{ if prev_page }}
+                <li><a class="pagination-button" href="{{ prev_page }}">← {{ trans:strings.previous }}</a></li>
+            {{ /if }}
+            {{ links:segments }}
+                {{ first }}
+                    {{ if page == current_page }}
+                        <li><span class="pagination-button active">{{ page }}</span></li>
+                    {{ else }}
+                        <li><a class="pagination-button" href="{{ url }}">{{ page }}</a></li>
+                    {{ /if }}
+                {{ /first }}
+
+                {{ if slider }}
+                    <li class="disabled"><span>...</span></li>
+                {{ /if }}
+
+                {{ slider }}
+                    {{ if page == current_page }}
+                        <li><span class="pagination-button active">{{ page }}</span></li>
+                    {{ else }}
+                        <li><a class="pagination-button" href="{{ url }}">{{ page }}</a></li>
+                    {{ /if }}
+                {{ /slider }}
+
+                {{ if slider || (!slider && last) }}
+                    <li class="disabled"><span>...</span></li>
+                {{ /if }}
+
+                {{ last }}
+                    {{ if page == current_page }}
+                        <li><span class="pagination-button active">{{ page }}</span></li>
+                    {{ else }}
+                        <li><a class="pagination-button" href="{{ url }}">{{ page }}</a></li>
+                    {{ /if }}
+                {{ /last }}
+
+            {{ /links:segments }}
+
+            {{ if next_page }}
+                <li><a class="pagination-button" href="{{ next_page }}">{{ trans:strings.next }} →</a></li>
+            {{ /if }}
+        </ul>
+    {{ /paginate }}
+{{ /if }}
+<!-- End: /components/_pagination.antlers.html -->

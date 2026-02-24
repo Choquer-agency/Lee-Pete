@@ -1,0 +1,64 @@
+title: 'Project Archive'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: projects_loop
+        field:
+          display: Projects
+          type: section
+          icon: section
+          instructions: 'Projects will be added automatically from the Projects Collection'
+          listable: hidden
+          instructions_position: above
+      -
+        handle: projects_testimonials
+        field:
+          display: Testimonials
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        import: testimonials
+      -
+        import: call_to_action
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: template
+        field:
+          default: project-archive
+          display: Template
+          type: hidden
+          icon: hidden
+          listable: hidden
+          instructions_position: above
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

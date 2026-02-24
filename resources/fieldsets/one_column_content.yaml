@@ -1,0 +1,37 @@
+title: 'One Column Content'
+fields:
+  -
+    handle: one_col_bg_color
+    field:
+      options:
+        eba900: Orange
+        004d71: Blue
+        fff: White
+      inline: false
+      cast_booleans: false
+      default: fff
+      display: 'Background Color'
+      type: radio
+      icon: radio
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+      width: 50
+  -
+    handle: one_col_content_width
+    field:
+      options:
+        small: 'Small Width'
+        regular: Regular
+      inline: false
+      cast_booleans: false
+      default: regular
+      display: 'Content Width'
+      type: radio
+      icon: radio
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    import: article

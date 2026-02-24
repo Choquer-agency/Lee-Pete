@@ -1,0 +1,37 @@
+<div class="py-20 bg-white border-b-2 border-neutral">
+	<div class="fluid-container">
+		{{ if featured_listings_title }}
+			<div>
+				<h2 class="text-center uppercase font-bold lg:text-3xl mb-10">{{ featured_listings_title }}</h2>
+			</div>
+		{{ /if }}
+		<div class="grid gap-5 lg:gap-10 grid-cols-1 md:grid-cols-2">
+			{{ featured_listings }}
+				<div class="border-[1px] border-neutral-light shadow-sm">
+					{{ featured_listing }}
+						<a href="{{ url }}" class="no-underline block js-hover-scale">
+							<div class="aspect-[74/45] overflow-hidden">
+								{{ featured_listing_image }}
+									{{
+										partial:components/picture
+										:image="url"
+										class="w-full h-full object-top object-cover"
+										cover="false"
+										lazy="true"
+										:sizes="view:sizes['{size}']"
+									}}
+								{{ /featured_listing_image }}
+							</div>
+							<div class="p-5">
+								<h3 class="mb-0 text-center font-bold xl:font-semibold lg:text-xl xl:text-2xl">{{ title }}</h3>
+							</div>
+						</a>
+					{{ /featured_listing }}
+				</div>
+			{{ /featured_listings }}
+			<div class="md:col-span-2 w-full">
+				<a class=" mx-auto text-xl text-center no-underline uppercase font-semibold block w-full md:w-1/2 py-8 px-14 bg-primary transition-all text-white hover:bg-white hover:text-primary border-primary border-2" href="{{ all_listings_link }}">See All Feature Listings</a>
+			</div>
+		</div>
+	</div>
+</div>

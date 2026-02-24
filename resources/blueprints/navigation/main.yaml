@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: left_nav_item
+        field:
+          inline: true
+          options:
+            left: Left
+          display: 'Left Nav Item'
+          type: checkboxes
+          icon: checkboxes
+          instructions: 'Will display the navigation item and any children to the left, beside the logo'
+          listable: hidden
+          instructions_position: above

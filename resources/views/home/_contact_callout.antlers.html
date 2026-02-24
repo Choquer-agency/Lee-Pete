@@ -1,0 +1,60 @@
+{{ if contact_callout_logo || contact_callout_white || contact_callout_blue }}
+<div class="py-14 bg-white md:bg-neutral">
+    <div class="fluid-container  md:flex justify-between items-center w-full">
+        <div class="hidden md:block">
+            {{ contact_callout_logo }}
+				{{
+					partial:components/picture
+					:image="url"
+					class=""
+					cover="false"
+					lazy="true"
+					:sizes="view:sizes['{size}']"
+				}}
+            {{ /contact_callout_logo }}
+        </div>
+        <div class="text-lg font-semibold">
+            <div class="text-neutral md:text-white flex md:block justify-between">
+                <div class="md:mb-6">
+                    {{ contact_callout_white }}
+                </div>
+
+                <p class="text-primary font-semibold flex md:block space-x-8 md:space-x-0 justify-end items-center">
+
+                    <span class="hidden md:inline">Phone: </span>
+                    <a href="tel:{{ configuration:phone_number | slugify }}" class="no-underline hover:underline">
+                        <span class="hidden md:inline">{{ configuration:phone_number }}</span>
+                        <span class="block md:hidden">
+                            <svg width="27px" height="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-257.000000, -8.000000)" fill="#9B9B9B">
+                                        <g>
+                                            <path d="M272.4913,23.2128 C269.9993,25.7058 267.1103,28.0898 265.9703,26.9478 C264.3363,25.3148 263.3283,23.8918 259.7263,26.7858 C256.1253,29.6818 258.8903,31.6108 260.4733,33.1948 C262.3013,35.0208 269.1093,33.2908 275.8393,26.5608 C282.5673,19.8318 284.2993,13.0238 282.4703,11.1958 C280.8883,9.6138 278.9593,6.8478 276.0643,10.4498 C273.1693,14.0508 274.5913,15.0578 276.2253,16.6928 C277.3663,17.8338 274.9853,20.7198 272.4913,23.2128"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    <br>
+                    <span class="hidden md:inline">Email: </span>
+                    <a href="mailto:{{ configuration:email }}" class="no-underline hover:underline">
+                        <span class="hidden md:inline">{{ configuration:email }}</span>
+                        <span class="block md:hidden">
+                            <svg width="31px" height="20px" viewBox="0 0 31 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-304.000000, -11.000000)" fill="#9B9B9B">
+                                        <g>
+                                            <path d="M321.06091,23.2659484 C320.477,23.5721981 320.065474,23.6121004 319.500497,23.6121004 C318.933527,23.6121004 318.525987,23.5721981 317.939088,23.2659484 C317.354182,22.9616939 305.621195,16.8187441 304.668606,16.3199661 C303.995018,15.9688264 304.000001,16.3798194 304.000001,16.6990374 L304.000001,29.3460522 C304.000001,30.0692803 304.960561,31 305.706889,31 L333.291116,31 C334.039437,31 334.999997,30.0692803 334.999997,29.3460522 L334.999997,16.6990374 C334.999997,16.3798194 335.006972,15.9688264 334.333384,16.3199661 C333.377806,16.8187441 321.645815,22.9616939 321.06091,23.2659484 Z M305.023336,12.871415 C305.864325,13.3243055 317.504644,19.5839693 317.939088,19.8173974 C318.37154,20.0508255 318.933527,20.1635493 319.500497,20.1635493 C320.065474,20.1635493 320.627462,20.0508255 321.06091,19.8173974 C321.493361,19.5839693 333.135673,13.3243055 333.977658,12.871415 C334.81765,12.4195222 335.613799,11 334.068333,11 L304.930668,11 C303.387195,11 304.180355,12.4195222 305.023336,12.871415"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{{ /if }}

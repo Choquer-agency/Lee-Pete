@@ -1,0 +1,14 @@
+<!-- /errors/_404_call_to_action.antlers.html -->
+{{ if configuration:cta_title or ( configuration:cta_button_link && configuration:cta_button_text ) }}
+<section class="fluid-container text-center py-24 lg:py-40">
+    <div class="text-center max-w-4xl m-auto">
+		{{ if configuration:cta_title }}
+        	<h2 class="text-[50px] lg:text-[72px] tracking-normal uppercase font-black leading-snug mb-16 lg:mb-20">{{ configuration:cta_title }}</h2>
+		{{ /if }}
+		{{ if configuration:cta_button_link && configuration:cta_button_text }}
+			<a href="{{ configuration:cta_button_link }}" class="button text-lg lg:text-2xl capitalize tracking-wide rounded-md px-9 py-4 inline-block font-bold">{{ configuration:cta_button_text }}</a>
+		{{ /if }}
+    </div>
+</section>
+{{ /if }}
+<!-- End: /errors/_404_call_to_action.antlers.html -->

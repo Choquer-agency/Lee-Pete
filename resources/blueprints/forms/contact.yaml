@@ -1,0 +1,48 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: first_name
+        field:
+          display: 'First Name'
+          type: text
+          validate: required
+          localizable: true
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: last_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Last Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: phone
+        field:
+          input_type: tel
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: email
+        field:
+          display: 'Your Email'
+          type: text
+          validate: required|email
+          localizable: true
+          instructions_position: above
+          listable: hidden
+          input_type: email
+          antlers: false

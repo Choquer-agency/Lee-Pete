@@ -1,0 +1,49 @@
+title: Testimonial
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: testimonial_content
+        field:
+          antlers: false
+          display: Content
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+      -
+        handle: testimonial_featured_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Featured Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          folder: testimonials
+      -
+        handle: listing_link
+        field:
+          display: 'Listing Link'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above

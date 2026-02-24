@@ -1,0 +1,16 @@
+title: 'Meet the Team'
+fields:
+  -
+    handle: team_members
+    field:
+      mode: default
+      create: true
+      collections:
+        - team
+      display: 'Team Members'
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required

@@ -1,0 +1,142 @@
+sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: phone_number
+        field:
+          input_type: tel
+          antlers: false
+          display: 'Phone Number'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+  header:
+    display: Header
+    fields:
+      -
+        handle: header_logo
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Header Logo'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+          folder: logos
+  footer:
+    display: Footer
+    fields:
+      -
+        handle: address_text
+        field:
+          always_show_set_button: false
+          buttons:
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: 'Address Text'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+      -
+        handle: copyright_text
+        field:
+          input_type: text
+          antlers: false
+          display: 'Copyright Text'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: footer_logo
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          display: 'Footer Logo'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          max_files: 1
+          validate:
+            - required
+          folder: logos
+      -
+        handle: right_footer_logo
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Right Footer Logo'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+          folder: logos
+      -
+        handle: bottom_footer_logo
+        field:
+          mode: list
+          container: assets
+          folder: logos
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Bottom Footer Logo'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+  error_messages:
+    display: 'Error messages'
+    fields:
+      -
+        handle: section_404
+        field:
+          type: section
+          listable: hidden
+          display: '404 error'
+      -
+        import: error_message
+        prefix: '404_'
+      -
+        import: call_to_action

@@ -1,0 +1,118 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: page_banner_section
+        field:
+          display: Banner
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+      -
+        handle: page_has_banner
+        field:
+          default: false
+          display: 'Page Has Banner'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+      -
+        handle: page_banner
+        field:
+          fields:
+            -
+              import: banner
+          mode: stacked
+          max_rows: 1
+          min_rows: 1
+          reorderable: true
+          display: Banner
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          if:
+            page_has_banner: 'equals true'
+      -
+        handle: page_fixed_button_section
+        field:
+          display: 'Fixed Button'
+          type: section
+          icon: section
+          instructions: 'When added, will add a fixed button to the right of the page'
+          listable: hidden
+          instructions_position: above
+      -
+        handle: fixed_button_text
+        field:
+          input_type: text
+          antlers: false
+          display: 'Fixed Button Text'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: fixed_button_link
+        field:
+          display: 'Fixed Button Link'
+          type: link
+          icon: link
+          width: 50
+          listable: hidden
+          instructions_position: above
+  page_builder:
+    display: 'Page Builder'
+    fields:
+      -
+        import: page_builder
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          input_type: text
+          localizable: true
+          listable: true
+          display: Title
+          validate:
+            - required
+      -
+        handle: meta
+        field:
+          type: section
+          instructions: 'This entry''s meta data.'
+          display: Meta
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          generate: true
+          listable: hidden
+          display: Slug
+          validate:
+            - required
+            - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

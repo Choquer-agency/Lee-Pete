@@ -1,0 +1,23 @@
+<div class="bg-primary py-20">
+    <div class="fluid-container">
+        <div class="js-slider splide relative flex flex-col justify-center">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {{ testimonials_entries }}
+                        <li class="splide__slide font-semibold text-lg">
+                            <div class="max-w-[68vw] md:max-w-[80vw] lg:max-w-4xl lg:px-0 m-auto">
+                                <p class="text-white leading-9">"{{ testimonial_content }}"</p>
+                                <p class="text-orange mb-0 text-right">- {{ title }}</p>
+                            </div>
+                        </li>
+                    {{ /testimonials_entries }}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{ if testimonial_button_text && testimonial_button_link }}
+        <div class="fluid-container text-center pt-16">
+            <a href="{{ testimonial_button_link }}" class="button button--orange inline-block">{{ testimonial_button_text }}</a>
+        </div>
+    {{ /if }}
+</div>
