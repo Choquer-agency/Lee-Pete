@@ -64,15 +64,20 @@ page_builder:
         contact_grid_phone: '(604) 209 2525'
         contact_grid_email: elliot@leeandpete.com
       -
-        contact_grid_name: 'DAYLAN BUTCHART'
-        contact_grid_position: null
-        contact_grid_phone: '(778) 241 5720'
-        contact_grid_email: daylan@leeandpete.com
-      -
-        contact_grid_name: 'KRISTIN WELLBROCK *'
+        contact_grid_name: 'KRISTIN WELLBROCK'
         contact_grid_position: null
         contact_grid_phone: '(604) 729 5646'
         contact_grid_email: kristin@leeandpete.com
+      -
+        contact_grid_name: 'SHAHIN MINA-POUR'
+        contact_grid_position: null
+        contact_grid_phone: '(604) 720 0084'
+        contact_grid_email: shahin@leeandpete.com
+      -
+        contact_grid_name: 'KRISTIE YUEN *'
+        contact_grid_position: null
+        contact_grid_phone: '(778) 837 8886'
+        contact_grid_email: kristie@leeandpete.com
     type: contact_grid
     enabled: true
     contact_section_note: '* Unlicensed Assistant'

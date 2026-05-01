@@ -258,7 +258,7 @@ featured_listings_title: 'Featured Listings'
 instagram_embed_code: '<div class="embedsocial-hashtag" data-ref="909a2a3f9fa23b7cf7f71f75b11a874026094981" ><a class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>'
 banner_background_image_gallery:
   - landing-team.jpg
-  - landing-image-white-overlay.jpeg
+  - landing-adi-kavazovic.jpg
   - landing-city-scape.jpeg
 all_listings_link: 'entry::eb535e7f-99a3-4fa1-b112-82a3940e8704'
 ---

@@ -38,7 +38,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'With over 10 years of working in the Vancouver Real Estate market and winning several awards including Top 1% of Greater Vancouver Realtors*, we have a proven record of success that results in a long list of happy clients.'
+            text: 'With over 50 years of working in the Vancouver Real Estate market and winning several awards including Top 1% of Greater Vancouver Realtors*, we have a proven record of success that results in a long list of happy clients.'
     type: one_column_content
     enabled: true
     one_col_content_width: small
@@ -52,6 +52,7 @@ page_builder:
       - 7e463b69-cc9e-4283-b5af-3d93877a5d56
       - b3e8b3c7-7e39-4086-b28c-4ae166d4096b
       - e0cd44e3-8eb2-46a4-884e-2138014976e5
+      - 9b1a2f7c-3d4e-4a5b-8c6f-1e2d3c4b5a6f
     type: team
     enabled: true
   -
